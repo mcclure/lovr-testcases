@@ -21,12 +21,7 @@ do
 	end
 end
 
---[[
--- Suggest you create a namespace for your game here, like:
-namespace.prepare("gamename", "standard", function(space)
-	require "engine.gamename.types"
-	require "engine.gamename.level"
-end)
+namespace.prepare("testcase", "standard")
 --]]
 
 -- Ent driver
@@ -34,7 +29,7 @@ end)
 
 namespace "standard"
 
-local defaultApp = "app/test/cube"
+local defaultApp = "testcase/stencil"
 
 function lovr.load()
 	ent.root = LoaderEnt(#arg > 0 and arg or {defaultApp})
