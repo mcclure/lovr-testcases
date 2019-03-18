@@ -12,6 +12,9 @@ return lovr.graphics.newShader([[
 
 	in vec4 spacePosition;
 	vec4 color(vec4 graphicsColor, sampler2D image, vec2 uv) {
+		vec3 pos = spacePosition.xyz/spacePosition.w;
+		if (mod(pos.x + pos.y + pos.z + 34.0, 0.5) > 0.1)
+			discard; 
 		return graphicsColor;
 	}
 
